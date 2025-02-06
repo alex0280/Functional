@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Mercedes-Benz | Luxury Cars</title>
+    <img src="logo1.jpg" height="200" width="300">
+    <style>
+                body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            transition: 0.3s;
+            color: #333;
+        }
+
+        
+        header {
+            background: black;
+            color: white;
+            padding: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+                .dark-mode {
+            background: #222;
+            color: #fff;
+        }
+
+        .dark-mode header {
+            background: #111;
+        }
+
+        .dark-mode .info-section {
+            background: #333;
+            color: #fff;
+        }
+
+        .dark-mode .car {
+            background: #444;
+            color: #fff;
+        }
+
+        
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: gray;
+        }
+
+        
+        main {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        
+        .slider {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+        }
+
+        .slides img {
+            width: 100%;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .slides img.active {
+            display: block;
+        }
+
+        
+        .car-models {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .car {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            width: 30%;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .car:hover {
+            background: #ddd;
+        }
+
+        .car img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        
+        .info-section {
+            text-align: left;
+            padding: 20px;
+            background: white;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        footer {
+            background: black;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .dark-mode footer {
+            background: #111;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🚘 Mercedes-Benz | The Best or Nothing</h1>
+        <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </header>
+
+    <main>
+        <div class="slider">
+            <div class="slides">
+                <img src="" class="active" alt="Mercedes Car">
+                <img src="https://source.unsplash.com/800x400/?luxury,car" alt="Luxury Mercedes">
+                <img src="https://source.unsplash.com/800x400/?sports,car" alt="Sports Mercedes">
+            </div>
+        </div>
+
+        <h2>🚀 Featured Mercedes-Benz Models</h2>
+        <div class="car-models">
+            <div class="car">
+                <img src="benz s.webp" alt="Mercedes Sedan">
+                <h3>Mercedes-Benz S-Class</h3>
+                <p>Luxury, Comfort & Technology.</p>
+            </div>
+            <div class="car">
+                <img src="g wagon.webp" alt="Mercedes SUV">
+                <h3>Mercedes-Benz G-Wagon</h3>
+                <p>Powerful Off-Road Performance.</p>
+            </div>
+            <div class="car">
+                <img src="Amg GT.web" alt="Mercedes Sports Car">
+                <h3>Mercedes-AMG GT</h3>
+                <p>Pure Performance & Speed.</p>
+            </div>
+        </div>
+
+        <section class="info-section">
+            <h2>📜 History of Mercedes-Benz</h2>
+            <p>Mercedes-Benz, a pioneer in the automotive industry, was founded in 1926 in Germany. It is known for producing luxury vehicles that blend innovation, safety, and performance.</p>
+        </section>
+
+        <section class="info-section">
+            <h2>🛡️ Safety Innovations</h2>
+            <p>Mercedes-Benz has been at the forefront of vehicle safety. It introduced **Anti-lock Braking System (ABS)**, **Airbags**, and **Lane Departure Warning** to make driving safer.</p>
+        </section>
+
+        <section class="info-section">
+            <h2>⚙️ Performance & Engineering</h2>
+            <p>From the **Mercedes-AMG sports cars** to the **fuel-efficient hybrid models**, the company continuously pushes the boundaries of performance engineering.</p>
+        </section>
+
+        <section class="info-section">
+            <h2>🔋 Future of Mercedes-Benz</h2>
+            <p>Mercedes is leading the way in electric vehicle technology with its **EQ series**, aiming for a greener and more sustainable future.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mercedes-Benz | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            let sections = document.querySelectorAll(".info-section, .car");
+            sections.forEach(section => section.classList.toggle("dark-mode"));
+        }
+
+        // Image Slider Functionality
+        let index = 0;
+        function showSlides() {
+            let slides = document.querySelectorAll(".slides img");
+            slides.forEach((slide) => slide.classList.remove("active"));
+            slides[index].classList.add("active");
+            index = (index + 1) % slides.length;
+        }
+
+        setInterval(showSlides, 3000);
+    </script>
+
+</body>
+</html>
